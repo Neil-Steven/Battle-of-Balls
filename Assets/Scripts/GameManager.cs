@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using GlobalSettings;
 
-
 public class GameManager : MonoBehaviour
 {
     enum GameState
@@ -45,13 +44,13 @@ public class GameManager : MonoBehaviour
         balls.Add(player);
 
         // 动态挂载CameraFollow脚本
-        GameObject camera = GameObject.Find("Main Camera");
-        camera.AddComponent<CameraFollow>();
-        Camera cameraComponent = camera.GetComponent<Camera>();
+        GameObject mainCamera = GameObject.Find("Main Camera");
+        mainCamera.AddComponent<CameraFollow>();
+        Camera cameraComponent = mainCamera.GetComponent<Camera>();
         cameraComponent.orthographic = true;
         cameraComponent.orthographicSize = BallData.DefaultRadius * 10;
-        camera.transform.localPosition = new Vector3(0, PlaneData.Height, 0);
-        camera.transform.localRotation = Quaternion.Euler(90, 0, 0);
+        mainCamera.transform.localPosition = new Vector3(0, PlaneData.Height, 0);
+        mainCamera.transform.localRotation = Quaternion.Euler(90, 0, 0);
 
         // 开始游戏
         gameState = GameState.Playing;

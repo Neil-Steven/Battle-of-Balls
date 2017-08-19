@@ -9,14 +9,8 @@ public class Ball : MovingPrimitive, IEatable
 
     public float radius
     {
-        get
-        {
-            return scale.x / 2;
-        }
-        private set
-        {
-            scale = 2 * value * Vector3.one;
-        }
+        get { return scale.x / 2; }
+        private set { scale = 2 * value * Vector3.one; }
     }
 
     override protected void RestrictPosition(ref Vector3 position)
@@ -36,14 +30,8 @@ public class Ball : MovingPrimitive, IEatable
 
     override public float volume
     {
-        get
-        {
-            return 4.0f / 3 * Mathf.PI * Mathf.Pow(radius, 3);
-        }
-        set
-        {
-            radius = Mathf.Pow(0.75f * value / Mathf.PI, 1.0f / 3);
-        }
+        get { return 4.0f / 3 * Mathf.PI * Mathf.Pow(radius, 3); }
+        set { radius = Mathf.Pow(0.75f * value / Mathf.PI, 1.0f / 3); }
     }
 
 
@@ -52,7 +40,6 @@ public class Ball : MovingPrimitive, IEatable
     /// </summary>
     /// <param name="color">球的颜色</param>
     /// <param name="radius">球的半径</param>
-    /// <param name="density">球的密度</param>
     /// <param name="plane">球所处的平面</param>
     /// <param name="position">球的生成位置</param>
     /// <param name="isPlayer">是否为玩家</param>

@@ -114,13 +114,13 @@ public class AI : IController
         // 如果范围内只有小球
         else if (nearestSmallBall.exists)
             intention = Intention.Chase;
-
+        
         // 如果范围内没有球，且自身是空闲状态
         else if (!nearestBigBall.exists && !nearestSmallBall.exists)
         {
-            // 随机选一个食物去吃(如果有食物的话)
-            if (GameManager.foods.Count != 0 && intention == Intention.Stay)
-                intention = Intention.FindFood;
+			// 有一定数量食物时，随机选一个食物去吃
+			if (GameManager.foods.Count > 20 && intention == Intention.Stay)
+                intention = Intention.FindFood; 
         }
     }
 
@@ -141,7 +141,7 @@ public class AI : IController
                 owner.MoveTowards(owner.position - nearestBigBall.position);
                 break;
 
-            case Intention.FindFood:    /// Attention index out of range
+            case Intention.FindFood:
                 int i = Random.Range(0, GameManager.foods.Count - 1);
                 Vector3 foodPosition = GameManager.foods[i].position;
                 owner.MoveTowards(foodPosition);

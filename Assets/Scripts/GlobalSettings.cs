@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// 游戏全局设置
-/// </summary>
 namespace GlobalSettings
 {
     public struct PlaneData

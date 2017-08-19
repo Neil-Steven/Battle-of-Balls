@@ -4,13 +4,7 @@ public class Food : Primitive, IEatable
 {
     public bool isAlive { get; private set; }
 
-    public float volume
-    {
-        get
-        {
-            return scale.x * scale.x * scale.x;
-        }
-    }
+    public float volume { get { return scale.x * scale.x * scale.x; } }
 
 
     public Food(Color color, float sideLength, Vector3 position)

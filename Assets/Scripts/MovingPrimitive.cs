@@ -14,14 +14,11 @@ public abstract class MovingPrimitive : Primitive
 
 	public new Vector3 position
 	{
-		get
-		{
-			return base.position;
-		}
-		protected set
-		{
-			RestrictPosition(ref value);
-			base.position = value;
+		get { return base.position; }
+		protected set 
+        {
+            RestrictPosition(ref value);
+            base.position = value;
 		}
 	}
 
@@ -46,13 +43,7 @@ public abstract class MovingPrimitive : Primitive
 	/// <summary>
 	/// 当前球的最大速度
 	/// </summary>
-	protected float maxVelocity
-	{
-		get
-		{
-			return 20f - scale.x * 0.1f;
-		}
-	}
+	protected float maxVelocity { get { return 20f - scale.x * 0.1f; } }
 
 	abstract public float volume { get; set; }
 

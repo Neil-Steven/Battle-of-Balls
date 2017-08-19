@@ -22,26 +22,14 @@ public class Primitive {
 
     public Vector3 scale
     {
-        get
-        {
-            return gameObject.transform.localScale;
-        }
-        protected set
-        {
-            gameObject.transform.localScale = value;
-        }
+        get { return gameObject.transform.localScale; }
+        protected set {  gameObject.transform.localScale = value; }
     }
 
     public Vector3 position
     {
-        get
-        {
-            return gameObject.transform.localPosition;
-        }
-        protected set
-        {
-            gameObject.transform.localPosition = value;
-        }
+        get { return gameObject.transform.localPosition; }
+        protected set { gameObject.transform.localPosition = value; }
     }
 
 
