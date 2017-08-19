@@ -10,4 +10,4 @@
 
 **效果图：**
 
-![]("https://github.com/Neil-Steven/Battle-of-Balls/blob/master/Screenshots/demo.gif")
+![](https://github.com/Neil-Steven/Battle-of-Balls/blob/master/Screenshots/demo.gif)
